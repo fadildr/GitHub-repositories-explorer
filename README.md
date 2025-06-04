@@ -1,44 +1,59 @@
-# GitHub Repositories Explorer
+# GitHub Explorer
 
-A modern React application that allows users to search for GitHub users and explore their repositories. Built with Next.js, TypeScript, and Tailwind CSS.
+A modern, feature-rich React application for exploring GitHub users and their repositories. Search for any GitHub user and dive deep into their profile, social connections, achievements, and repository portfolio with an intuitive, GitHub-like interface.
 
-## 🚀 Features
+## ✨ Features
 
-- **User Search**: Search for up to 5 GitHub users with usernames similar to your query
-- **Repository Explorer**: View all repositories for any selected user
-- **Responsive Design**: Fully responsive interface that works on desktop and mobile
-- **Loading States**: Smooth loading indicators for better user experience
-- **Error Handling**: Comprehensive error handling with user-friendly messages
-- **Keyboard Navigation**: Full keyboard support for accessibility
-- **Modern UI**: Clean, modern interface with dark mode support
-- **Comprehensive Tests**: Unit and integration tests for all components
+### 🔍 **Smart User Search**
 
-## 🛠️ Technologies Used
+- Real-time search with debouncing
+- Up to 5 user results per search
+- Keyboard shortcuts (Ctrl+K or /) for quick access
+- Auto-focus and smooth UX
 
-- **React 18** - Modern React with hooks
-- **Next.js 14** - React framework with App Router
-- **TypeScript** - Type-safe JavaScript
-- **Tailwind CSS** - Utility-first CSS framework
-- **shadcn/ui** - High-quality UI components
-- **Lucide React** - Beautiful icons
-- **GitHub API** - Official GitHub REST API
-- **Jest** - Testing framework
-- **React Testing Library** - Component testing
+### 👤 **Comprehensive User Profiles**
 
-## 📋 Requirements Met
+- **Dynamic Social Links** - Auto-detect Twitter, LinkedIn, YouTube, Instagram from bio
+- **Smart Achievements** - Gamified profile badges based on real GitHub stats
+- **Contact Information** - Location, company, join date, activity levels
+- **Real Organizations** - Live organization memberships
+- **Activity Tracking** - Account age, hireable status, professional type detection
 
-✅ React with TypeScript  
-✅ GitHub API integration  
-✅ Search up to 5 users  
-✅ Proper error handling  
-✅ Loading states and UX best practices  
-✅ Keyboard event handling  
-✅ Mobile responsive design  
-✅ English language only  
-✅ Clean, maintainable code structure  
-✅ Unit and integration tests
+### 📊 **Advanced Repository Analytics**
 
-## 🚀 Getting Started
+- **Pinned Repositories** - Smart algorithm to simulate GitHub's pinned repos
+- **Language Statistics** - Dynamic breakdown with progress bars and percentages
+- **Repository Insights** - Stars, forks, topics, last updated, homepage links
+- **Enhanced Cards** - Rich repository information with color-coded languages
+
+### 📈 **GitHub-Style Activity Visualization**
+
+- **Contribution Graph** - Realistic contribution calendar with hover tooltips
+- **Recent Activity** - Live user events from GitHub API
+- **Streak Calculations** - Current and longest contribution streaks
+- **Activity Timeline** - Commits, PRs, issues, releases with descriptions
+
+### 📱 **Modern User Experience**
+
+- **Fully Responsive** - Perfect on desktop, tablet, and mobile
+- **Dark Mode Support** - Seamless light/dark theme switching
+- **Loading States** - Skeleton screens and smooth transitions
+- **Error Boundaries** - Graceful error handling with retry options
+- **Accessibility** - ARIA labels, keyboard navigation, screen reader support
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Icons**: Lucide React
+- **API**: GitHub REST API v3
+- **State Management**: React Hooks
+- **Testing**: Jest + React Testing Library
+- **Deployment**: Vercel/Netlify ready
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
@@ -47,174 +62,279 @@ A modern React application that allows users to search for GitHub users and expl
 
 ### Installation
 
-1. Clone the repository:
-   \`\`\`bash
-   git clone https://github.com/yourusername/github-explorer.git
-   cd github-explorer
-   \`\`\`
+```bash
+# Clone the repository
+git clone https://github.com/fadildr/GitHub-repositories-explorer.git
+cd GitHub-repositories-explorer
 
-2. Install dependencies:
-   \`\`\`bash
-   npm install
+# Install dependencies
+npm install
 
-# or
+# Start development server
+npm run dev
+```
 
-yarn install
-\`\`\`
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-3. Run the development server:
-   \`\`\`bash
-   npm run dev
+### Build for Production
 
-# or
-
-yarn dev
-\`\`\`
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Building for Production
-
-\`\`\`bash
+```bash
 npm run build
 npm start
-\`\`\`
+```
 
-## 🧪 Testing
+## 📁 Project Architecture
 
-The project includes comprehensive unit and integration tests:
-
-\`\`\`bash
-
-# Run all tests
-
-npm test
-
-# Run tests in watch mode
-
-npm run test:watch
-
-# Generate test coverage report
-
-npm run test:coverage
-\`\`\`
-
-## 🏗️ Project Structure
-
-\`\`\`
-├── app/
-│ ├── globals.css
-│ ├── layout.tsx
-│ ├── loading.tsx
-│ └── page.tsx
-├── components/
-│ ├── activity/
-│ │ ├── contribution-graph.tsx
-│ │ └── recent-activity.tsx
-│ ├── profile/
-│ │ ├── contact-info.tsx
-│ │ ├── social-links.tsx
-│ │ └── user-profile.tsx
-│ ├── repository/
-│ │ ├── language-stats.tsx
-│ │ ├── pinned-repositories.tsx
-│ │ ├── popular-repositories.tsx
-│ │ ├── repository-card.tsx
-│ │ └── repository-list.tsx
-│ ├── search/
-│ │ ├── search-input.tsx
-│ │ ├── search-view.tsx
-│ │ └── user-list.tsx
-│ └── ui/ # shadcn/ui components
-│ ├── accordion.tsx
-│ ├── alert-dialog.tsx
-│ ├── ... (many UI components)
-├── hooks/
-│ ├── use-debounce.ts
-│ ├── use-mobile.tsx
-│ ├── use-toast.ts
-│ ├── use-user-repositories.ts
-│ └── use-user-search.ts
-├── lib/
-│ ├── constants.ts
-│ ├── formatting.ts
-│ ├── github-api.ts
-│ └── utils.ts
-├── types/
-│ └── github.ts
-├── tests /
-│ ├── integration/
-│ │ ├── keyboard-navigation.test.tsx
-│ │ ├── mobile-responsiveness.test.tsx
-│ │ └── search-to-repos-flow.test.tsx
-│ ├── mocks/
-│ │ └── github-api.ts
-│ ├── page.test.tsx
-│ ├── repository-list.test.tsx
-│ ├── search-input.test.tsx
-│ ├── setup.ts
-│ └── user-list.test.tsx
-├── public/
-│ ├── placeholder-logo.png
-│ ├── placeholder-logo.svg
-│ ├── placeholder-user.jpg
-│ ├── placeholder.jpg
-│ └── placeholder.svg
-├── styles/
-│ └── globals.css
-├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-└── README.md
-\`\`\`
-
-## 🎯 Usage
-
-1. **Search Users**: Enter a GitHub username in the search box
-2. **Select User**: Click on any user from the search results (up to 5 shown)
-3. **Browse Repositories**: View all repositories for the selected user
-4. **Repository Details**: See stars, forks, language, topics, and last update
-5. **External Links**: Click repository names or user profiles to open on GitHub
+```
+src/
+├── app/                          # Next.js App Router
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/                   # Feature-based component organization
+│   ├── ui/                      # 🎨 Base UI Components
+│   │   ├── button.tsx
+│   │   ├── card.tsx
+│   │   ├── avatar.tsx
+│   │   ├── error-message.tsx
+│   │   ├── loading-spinner.tsx
+│   │   └── page-header.tsx
+│   │
+│   ├── search/                  # 🔍 Search & Discovery
+│   │   ├── search-input.tsx
+│   │   ├── search-view.tsx
+│   │   └── user-list.tsx
+│   │
+│   ├── profile/                 # 👤 User Profile
+│   │   ├── user-profile.tsx
+│   │   ├── contact-info.tsx
+│   │   ├── social-links.tsx
+│   │   └── user-readme.tsx
+│   │
+│   ├── repository/              # 📁 Repository Management
+│   │   ├── repository-list.tsx
+│   │   ├── repository-card.tsx
+│   │   ├── pinned-repositories.tsx
+│   │   ├── popular-repositories.tsx
+│   │   └── language-stats.tsx
+│   │
+│   └── activity/                # 📊 Activity & Analytics
+│       ├── contribution-graph.tsx
+│       └── recent-activity.tsx
+│
+├── hooks/                       # Custom React Hooks
+│   ├── use-debounce.ts
+│   ├── use-search-focus.ts
+│   ├── use-user-search.ts
+│   └── use-user-repositories.ts
+│
+├── lib/                         # Utilities & Services
+│   ├── github-api.ts           # All-in-one GitHub API service
+│   ├── formatting.ts           # Date, number, URL formatters
+│   ├── constants.ts            # App constants
+│   └── utils.ts                # Utility functions
+│
+├── types/                       # TypeScript Definitions
+│   ├── github.ts               # GitHub API types
+│   └── github-extended.ts      # Extended types for features
+│
+└── __tests__/                   # Test Suite
+    ├── components/
+    ├── hooks/
+    ├── integration/
+    └── mocks/
+```
 
 ## 🔧 API Integration
 
-The application uses the GitHub REST API v3:
+### GitHub REST API v3
 
-- **User Search**: \`GET /search/users?q={query}&per_page=5\`
-- **User Repositories**: \`GET /users/{username}/repos?sort=updated&per_page=100\`
+- **Search Users**: `GET /search/users?q={query}&per_page=5`
+- **User Details**: `GET /users/{username}`
+- **User Repositories**: `GET /users/{username}/repos?sort=updated&per_page=100`
+- **User Organizations**: `GET /users/{username}/orgs`
+- **User Events**: `GET /users/{username}/events/public?per_page=100`
+- **User README**: `GET /repos/{username}/{username}/contents/README.md`
 
-No authentication required for public data access.
+### Features Powered by API
 
-## 🎨 Design Features
+- ✅ **Real-time data** from GitHub
+- ✅ **Rate limit handling** with graceful fallbacks
+- ✅ **Error boundaries** for API failures
+- ✅ **Mock data generation** when API limits are reached
 
-- **Clean Interface**: Minimalist design focusing on content
-- **Responsive Layout**: Works seamlessly on all device sizes
-- **Loading States**: Skeleton loaders and spinners for better UX
-- **Error Boundaries**: Graceful error handling with retry options
-- **Accessibility**: ARIA labels, keyboard navigation, and screen reader support
+## 🎨 Key Components
+
+### 🔍 **Smart Search System**
+
+```typescript
+// Advanced search with debouncing and focus management
+const { users, isSearching, searchError, searchUsers } = useUserSearch();
+```
+
+### 👤 **Dynamic User Profiles**
+
+```typescript
+// Real GitHub data with smart social link detection
+<UserProfile user={selectedUser} />
+<ContactInfo user={selectedUser} />
+<SocialLinks user={selectedUser} />
+```
+
+### 📊 **Activity Visualization**
+
+```typescript
+// GitHub-style contribution graph with real data
+<ContributionGraph username={user.login} />
+<RecentActivity username={user.login} />
+```
 
 ## 🧪 Testing Strategy
 
-The application includes comprehensive testing:
+### Test Coverage
 
-- **Unit Tests**: Individual component testing
-- **Integration Tests**: Testing component interactions
-- **API Mocking**: Using MSW to mock GitHub API responses
-- **User Flows**: Complete user journey testing
-- **Keyboard Navigation**: Testing accessibility via keyboard
-- **Mobile Responsiveness**: Testing different viewport sizes
-- **Error Handling**: Testing error states and recovery
+- ✅ **Unit Tests** - Individual component testing
+- ✅ **Integration Tests** - Component interaction testing
+- ✅ **API Mocking** - MSW for GitHub API simulation
+- ✅ **User Flows** - Complete journey testing
+- ✅ **Accessibility** - Keyboard navigation and screen readers
+- ✅ **Responsive Design** - Multiple viewport testing
+
+### Run Tests
+
+```bash
+# Run all tests
+npm test
+
+# Watch mode
+npm run test:watch
+
+# Coverage report
+npm run test:coverage
+```
+
+## 🎯 Usage Guide
+
+### 1. **Search for Users**
+
+- Type any GitHub username
+- Use keyboard shortcuts (Ctrl+K or /)
+- Select from up to 5 results
+
+### 2. **Explore User Profiles**
+
+- View comprehensive user information
+- Check social media connections
+- See professional achievements
+- Browse organization memberships
+
+### 3. **Analyze Repositories**
+
+- Browse pinned and popular repositories
+- View language distribution
+- Check repository statistics
+- Access external links
+
+### 4. **Track Activity**
+
+- Visualize contribution patterns
+- See recent GitHub activity
+- Monitor contribution streaks
+- Analyze activity trends
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+### Netlify
+
+```bash
+# Build and deploy
+npm run build
+# Upload dist folder to Netlify
+```
+
+### Docker
+
+```dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+EXPOSE 3000
+CMD ["npm", "start"]
+```
+
+## 🎨 Customization
+
+### Theme Configuration
+
+```typescript
+// tailwind.config.ts - Customize colors, fonts, spacing
+export default {
+  theme: {
+    extend: {
+      colors: {
+        github: {
+          primary: "#0969da",
+          secondary: "#656d76",
+        },
+      },
+    },
+  },
+};
+```
+
+### API Configuration
+
+```typescript
+// lib/constants.ts - Adjust API limits and settings
+export const API_CONFIG = {
+  SEARCH_RESULTS_LIMIT: 5,
+  REPOS_LIMIT: 100,
+  DEBOUNCE_DELAY: 300,
+};
+```
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch: \`git checkout -b feature/amazing-feature\`
-3. Commit changes: \`git commit -m 'Add amazing feature'\`
-4. Push to branch: \`git push origin feature/amazing-feature\`
-5. Open a Pull Request
+1. **Fork** the repository
+2. **Create** a feature branch: `git checkout -b feature/amazing-feature`
+3. **Commit** changes: `git commit -m 'Add amazing feature'`
+4. **Push** to branch: `git push origin feature/amazing-feature`
+5. **Open** a Pull Request
+
+### Development Guidelines
+
+- Follow TypeScript best practices
+- Write tests for new features
+- Use conventional commit messages
+- Ensure accessibility compliance
+- Test on multiple devices
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-**Live Demo**: [Your deployed URL here]  
-**Repository**: [Your GitHub repository URL here]
-\`\`\`
+**🔗 Links:**
+
+- **Live Demo**: [https://git-hub-repositories-explorer-fadildrs-projects.vercel.app/](https://git-hub-repositories-explorer-fadildrs-projects.vercel.app/)
+- **Repository**: [https://github.com/fadildr/GitHub-repositories-explorer](https://github.com/fadildr/GitHub-repositories-explorer)
+- **Issues**: [Report bugs or request features](https://github.com/fadildr/GitHub-repositories-explorer/issues)
+
+---
+
+Built with ❤️ using React, Next.js, and TypeScript
